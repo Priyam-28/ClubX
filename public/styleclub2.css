@@ -1,0 +1,262 @@
+    @font-face {
+        font-family: 'Blanka Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Blanka Regular'), url('fonts/Blanka-Regular.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'Rascon Demo';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Rascon Demo'), url('fonts/rascon.woff') format('woff');
+    }
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: #FAF0CA;
+
+}
+body::-webkit-scrollbar {
+    width: 1px;
+
+  }
+
+a {
+    text-decoration: none;
+}
+
+#nav {
+    font-family: 'Rascon Demo';
+    height: 9vh;
+    width: 100%;
+    background-color: #155590;
+    color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    color: white;
+    z-index: 999;
+    gap: 25px;
+    justify-content: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 3vh;
+    font-weight: 900px;
+    transition: all ease-in-out 0.8s;
+}
+
+
+#nav img {
+    height: 100%;
+    width: 9vw;
+    border-radius: 10px;
+    margin-right: 33vw;
+}
+
+#nav a {
+    text-decoration: none;
+    font-weight: 400;
+    color: aliceblue;
+    font-family: 'Rascon Demo';
+}
+
+.navigate {
+    margin-left: 20px;
+}
+
+
+.technical {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.nontechnical {
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.cultural {
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.card {
+    height: 45vh;
+    width: 20vw;
+    margin: 12px;
+    border-radius: 10px;
+    border: solid black 3px;
+    position: relative;
+    box-shadow: 8px 8px 24px black;
+    overflow: hidden;
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 1.5s;
+
+}
+
+.shadow {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background-color: #1f3d4752;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    font-size: 20px;
+    object-fit: contain;
+    color: black;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+
+}
+
+.shadow-l {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    position: absolute;
+    background-color: #b0c4cb82;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    font-size: 20px;
+    color: black;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+
+}
+
+.card:hover .shadow {
+    right: 0;
+}
+
+.card:hover .shadow-l {
+    right: 0;
+}
+
+
+.card:hover .card-img { 
+    transform: scale(105%);
+}
+
+.card-title {
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: 600;
+    font-family: 'DotGothic16';
+}
+
+.card-info {
+    font-size: 20px;
+    line-height: 25px;
+    margin: 15px 0;
+    font-weight: 400;
+    font-style: 'Tilt Neon', sans-serif;
+
+
+
+}
+
+.social {
+    font-size: 25px;
+
+    color: #0D3B66;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+
+}
+
+
+.box1 {
+    top: 9.1vh;
+    
+    position: relative;
+    border-radius: 25px;
+    box-shadow:inset 10px -8px 24px #ee974bec;
+
+
+    padding: 5px;
+    /* border: 3px solid black; */
+    margin-bottom: 10px;
+}
+
+.box2 {
+    top: 9vh;
+    position: relative;
+    border-radius: 25px;
+    box-shadow: inset 10px -10px 24px #EE964B;
+
+    /* border: 3px solid black; */
+    padding: 5px;
+    margin-bottom: 10px;
+    
+
+}
+
+.box3 {
+    top: 9vh;
+    
+    position: relative;
+    border-radius: 25px;
+    /* border: 3px solid black; */
+    box-shadow:inset 10px -8px 24px #EE964B;
+
+    padding: 5px;
+    margin-bottom: 10px;
+
+
+}
+.club-des{
+    font-family: 'Rascon Demo';
+    font-size: 3.5vh;
+    font-weight: 500;
+    font-family: 'Patrick Hand', cursive;
+    margin: 5vh 2vh;
+
+}
+.club-over{
+    font-family: 'Blanka Regular';
+    margin: 2vh;
+    letter-spacing: 2px;
+}

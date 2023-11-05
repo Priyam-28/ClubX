@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Clubs</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Josefin+Sans:wght@300&family=Kanit:wght@200&family=Tilt+Neon&family=Ubuntu:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav id="nav">
+    <img src="Images/ClubX.png" alt="icon">
+    <div class="navigate"></div>
+
+    <div><a href="clubs2.html">Home</a></div>
+    <div><a href="https://vitchennaievents.com/conf1/">Events</a></div>
+    <div><a href="https://docs.google.com/forms/u/0/">Recruitment</a>
+    </div>
+    <div><a href="#members">Members</a></div>
+    <div><a href="clubs2.html">Clubs</a>
+    </div>
+    <div><a href="news.html">News</a></div>
+    
+
+  </nav>
+  <div class="box1">
+    <h1 class="club-over">Technical Clubs</h1>
+    <p class="club-des">VIT Chennai boasts a vibrant array of technical clubs, including the Hack Club for cybersecurity
+      enthusiasts,
+      Android Club for mobile app developers, Google Developer Students Club fostering Google tech skills,
+      Microsoft
+      Innovations Club exploring cutting-edge tech, and CloudOps for cloud computing enthusiasts. Other clubs like
+      CodeChef, Linux, Robotics, Game Development, Zero Bugs, and Tech Researcher's Club offer diverse
+      opportunities
+      for tech enthusiasts to explore, innovate, and learn.</p>
+    <div class="technical">
+      <% clubs.forEach((club)=> { %>
+        <div class="card">
+          <img src="<%= club.imageUrl %>" alt="" class="card-img">
+          <div class="shadow">
+            <h1 class="card-title">
+              <%= club.name %>
+            </h1>
+            <p class="card-info">
+              <%= club.description %> <br>
+                <p>Recruiting: <%= club.isRecruiting ? 'Yes' : 'No' %>
+                    <% if (club.isRecruiting) { %> <br>
+                      <a href="<%= club.googleFormLink %>">Join Now!</a>
+                      <% } %>
+                </p>
+            </p>
+            <div class="social">
+              <a href="https://www.instagram.com/androidvitc/?hl=en"><i class="ri-instagram-line"></i></a><i
+                class="ri-telegram-fill"></i><i class="ri-github-fill"></i>
+            </div>
+          </div>
+
+          <!-- <p>Department Head: <%= club.departmentHead %>
+          </p>
+
+          <p>Description: <%= club.description %>
+          </p> -->
+        </div>
+        <% }); %>
+
+
+    </div>
+    <div class="box2">
+      <h1 class="club-over">Non-Technical Clubs</h1>
+      <p class="club-des">VIT Chennai offers a vibrant array of non-technical clubs that cater to diverse interests.From the innovative
+        spirit of FYI to the social impact focus of Enactus, and the artistic expressions in Dramatics, Dance, and Fine
+        Arts clubs, students can explore their passions. Other clubs like Quiz, Photography, Event Managers,Biosphere,
+        Voice IT, and NSS provide opportunities for skill-building, teamwork, and community engagement, fostering a
+        well-rounded college experience</p>
+      <div class="nontechnical">
+        <% nontech.forEach((club)=> { %>
+          <div class="card">
+            <img src="<%= club.imageUrl %>" alt="" class="card-img">
+            <div class="shadow">
+              <h1 class="card-title">
+                <%= club.name %>
+              </h1>
+              <p class="card-info">
+                <%= club.description %> <br>
+                  <p>Recruiting: <%= club.isRecruiting ? 'Yes' : 'No' %>
+                      <% if (club.isRecruiting) { %> <br>
+                        <a href="<%= club.googleFormLink %>">Join Now!</a>
+                        <% } %>
+                  </p>
+              </p>
+              <div class="social">
+                <a href="https://www.instagram.com/androidvitc/?hl=en"><i class="ri-instagram-line"></i></a><i
+                  class="ri-telegram-fill"></i><i class="ri-github-fill"></i>
+              </div>
+            </div>
+
+            <!-- <p>Department Head: <%= club.departmentHead %>
+            </p>
+  
+            <p>Description: <%= club.description %>
+            </p> -->
+          </div>
+          <% }); %>
+
+
+      </div>
+
+
+
+      <!-- <div class="club-cards">
+    <% clubs.forEach((club)=> { %>
+      <div class="card">
+        <h2>
+          <%= club.name %>
+        </h2>
+        <p>Department Head: <%= club.departmentHead %>
+        </p>
+        <p>Recruiting: <%= club.isRecruiting ? 'Yes' : 'No' %>
+        </p>
+        <p>Description: <%= club.description %>
+        </p>
+      </div>
+      <% }); %>
+  </div> -->
+</body>
+
+</html>

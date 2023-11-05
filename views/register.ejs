@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Register</h1>
+            <form action="/register" method="post">
+                <div class="input-container">
+                    <!-- <label for="registerno">Register No.</label> -->
+                    <input type="text" name="registerno" placeholder="Register No.">
+                </div>
+                <div class="input-container">
+                    <!-- <label for="password">Password</label> -->
+                    <input type="password" name="password" class="w-full px-3 py-2 mb-3 border rounded-md shadow-sm"
+                        placeholder="Password">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <p class="signup-link">Already Have A Account?  <a href="/login">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

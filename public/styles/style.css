@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'Blanka Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Blanka Regular'), url('public/fonts/Blanka-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Rascon Demo';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rascon Demo'), url('public/fonts/rascon.woff') format('woff');
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0d3b66d3;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background:transparent
+    
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+}
+
+body {
+    background: #faf0caf4;
+
+}
+
+
+a {
+    text-decoration: none;
+}
+
+#nav {
+    font-family: 'Rascon Demo';
+    height: 9vh;
+    width: 100%;
+    /* background-color:#0D3B66; */
+    color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    color: white;
+    z-index: 99;
+    gap: 25px;
+    justify-content: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 3vh;
+    font-weight: 900px;
+    transition: all ease-in-out 0.8s;
+}
+#nav .register{
+    color: black;
+    font-size: 26px;
+    -webkit-text-stroke: 1.5px #eae0e0;
+    margin-left: 7vw;
+
+}
+
+
+#nav img {
+    height: 100%;
+    width: 9vw;
+    border-radius: 10px;
+    margin-right: 33vw;
+}
+
+#nav a {
+    text-decoration: none;
+    font-weight: 400;
+    color: aliceblue;
+    font-family: 'Rascon Demo';
+    transition: all ease-in 0.3s;
+}
+
+#nav a:hover {
+    color: #EBD34F;
+}
+
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+
+}
+.main img{
+    /* padding: 10px; */
+    position: absolute;
+    /* left: 25%; */
+    height: 100vh;
+    border-radius: 20px;
+}
+.main-info{
+    background: #849fca3f;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:20vh;    
+    width: 50vw;
+    color: black;
+    height: 65%;
+    padding: 20px;
+    backdrop-filter: blur(5px) ;
+    border-radius: 10px 20px;
+}
+.main-info p{
+    margin-left: 20px;
+    font-size: 21px;
+    /* color: whitesmoke;  */
+    font-family: 'Tilt Neon';   
+    margin-bottom: 20px;
+}
+
+.main-info h1{
+    /* color: whitesmoke; */
+    font-family: 'Blanka Regular';
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.main-info button{
+    /* margin-left: 50px; */
+    align-items: center;
+    margin-top: 20px;
+    height: 50px;
+    width: 100px;
+    background: #F95738;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: 'Tilt Neon';
+    border-radius: 10px;
+    font-size: medium;
+    transition: all ease-in 0.2s;
+    transform: rotateZ('angle');
+
+    
+}.main-info button:hover{
+    background: #0D3B66;
+    translate: 0 0 5px;
+}
+
+.page2{
+    height: auto;
+    /* width: 100vw; */
+    overflow: hidden;
+    background: #FAF0CA;
+}
+.page2 img{
+    width: 100%;
+}
+.design{
+    height: 35%;
+}
+/* Add this to your HTML or a linked CSS file */
+.image-scroller-container {
+    display: flex;
+    width: 100%;
+    margin: 20px;
+
+  }
+  
+  .image-scroller {
+    white-space: nowrap;
+    animation: scrolling 50s linear infinite;
+
+  }
+  
+  .image-scroller img {
+    display: inline-block;
+    margin-right: 20px; 
+    height: 60vh;
+    width: 50vw;
+  }
+  
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .page3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  .page3 button{
+    margin-left: 40px;
+    align-items: center;
+    margin-top: 20px;
+    height: 55px;
+    width: 105px;
+    background: #f95838e2;
+    color: white;
+    font-family: 'Tilt Neon';
+    border-radius: 10px;
+    font-size: 19px;
+    transition: all ease-in-out 0.5s;
+    
+}
+
+.page3 button:hover{
+    scale: 103%;
+    background:#0D3B66 ;
+}
+
+footer{
+    
+    padding-top: 35px;
+    text-align: center;
+    height: 15vh;
+    width: 100vw;
+    background: #0D3B66;
+    color:  white;
+    font-family: 'Tilt Neon';
+    font-size: 25px;
+}
