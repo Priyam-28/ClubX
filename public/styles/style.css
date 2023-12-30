@@ -54,7 +54,7 @@ a {
     color: white;
     z-index: 99;
     gap: 25px;
-    justify-content: left;
+    justify-content: right;
     position: fixed;
     top: 0;
     left: 0;
@@ -66,16 +66,18 @@ a {
     color: black;
     font-size: 26px;
     -webkit-text-stroke: 1.5px #eae0e0;
-    margin-left: 7vw;
+    margin-left: 9vw;
 
 }
 
 
 #nav img {
-    height: 100%;
+    height: 9vh;
     width: 9vw;
     border-radius: 10px;
-    margin-right: 33vw;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 #nav a {
@@ -130,9 +132,33 @@ a {
 
 .main-info h1{
     /* color: whitesmoke; */
+    /* white-space: nowrap; */
     font-family: 'Blanka Regular';
     font-weight: 400;
     margin-bottom: 15px;
+    /* overflow: hidden;
+    border-right: 0.15rem solid orange;
+    animation: blink 0.75s step-end infinite ,typing 3.5s steps(17); */
+
+}
+/* @keyframes blink{
+    from{
+        border-color: transparent;
+    }
+    50%{
+        border-color: orange;
+    }
+}@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 50%;
+    }
+} */
+.main-info button a{
+    text-decoration: none;
+    color: white;
 }
 .main-info button{
     /* margin-left: 50px; */
@@ -149,7 +175,7 @@ a {
     transition: all ease-in 0.2s;
     transform: rotateZ('angle');
 
-    
+  
 }.main-info button:hover{
     background: #0D3B66;
     translate: 0 0 5px;
@@ -204,11 +230,15 @@ a {
     align-items: center;
     padding-bottom: 20px;
   }
+  .page3 button a{
+    text-decoration: none;
+    color: white;
+  }
   .page3 button{
     margin-left: 40px;
     align-items: center;
     margin-top: 20px;
-    height: 55px;
+    height: 50px;
     width: 105px;
     background: #f95838e2;
     color: white;
@@ -220,7 +250,7 @@ a {
 }
 
 .page3 button:hover{
-    scale: 103%;
+    scale: 102%;
     background:#0D3B66 ;
 }
 

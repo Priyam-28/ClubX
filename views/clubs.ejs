@@ -5,14 +5,7 @@
   <title>Clubs</title>
   <link rel="stylesheet" type="text/css" href="/styles/main.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Josefin+Sans:wght@300&family=Kanit:wght@200&family=Tilt+Neon&family=Ubuntu:wght@300;400&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 
 </head>
 
@@ -113,6 +106,41 @@
 
 
       </div>
+      <div class="box3">
+        <h1 class="club-over">Chapters</h1>
+        <p class="club-des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur eligendi molestias explicabo adipisci totam laboriosam tenetur quod. Maiores, vitae ut! Aliquam aliquid et vitae molestias veniam ad omnis in, neque temporibus ex rerum voluptatem, perspiciatis eum nulla, exercitationem recusandae quis minus. Cum inventore nulla ex.</p>
+        <div class="chapter">
+          <% chap.forEach((club)=> { %>
+            <div class="card">
+              <img src="<%= club.imageUrl %>" alt="" class="card-img">
+              <div class="shadow">
+                <h1 class="card-title">
+                  <%= club.name %>
+                </h1>
+                <p class="card-info">
+                  <%= club.description %> <br>
+                    <p>Recruiting: <%= club.isRecruiting ? 'Yes' : 'No' %>
+                        <% if (club.isRecruiting) { %> <br>
+                          <a href="<%= club.googleFormLink %>">Join Now!</a>
+                          <% } %>
+                    </p>
+                </p>
+                <div class="social">
+                  <a href="https://www.instagram.com/androidvitc/?hl=en"><i class="ri-instagram-line"></i></a><i
+                    class="ri-telegram-fill"></i><i class="ri-github-fill"></i>
+                </div>
+              </div>
+  
+              <!-- <p>Department Head: <%= club.departmentHead %>
+              </p>
+    
+              <p>Description: <%= club.description %>
+              </p> -->
+            </div>
+            <% }); %>
+  
+  
+        </div>
 
 
 
@@ -131,6 +159,9 @@
       </div>
       <% }); %>
   </div> -->
+  <footer>
+    <p>Designed And Developed by Priyam & Shashwat &copy</p>
+</footer>
 </body>
 
 </html>

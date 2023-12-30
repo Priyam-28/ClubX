@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const LogInCollection = require("./mongo")
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
@@ -30,7 +33,9 @@ app.get('/register', (req, res) => {
 app.get('/home', (req, res) => {
     res.render('home');
 })
-
+app.get('/home2', (req, res) => {
+    res.render('home2');
+})
 
 
 app.post('/register', async (req, res) => {
@@ -67,7 +72,9 @@ app.post('/login', async (req, res) => {
         }
 
         else {
-            res.send("Incorrect Password")
+            const errorMessage = 'Incorrect password. Please try again.';
+            res.render('login', { error: errorMessage });
+            console.log(errorMessage)
         }
 
 
@@ -103,6 +110,16 @@ const NonTechnicalClub = mongoose.model('NonTechnicalClub', {
     googleFormLink: String,
     
 });
+const Chapters = mongoose.model('Chapter', {
+    name: String,
+    departmentHead: String,
+    isRecruiting: Boolean,
+    description: String,
+    imageUrl: String,
+    googleFormLink: String,
+    
+});
+
 
 
 // app.get('/', (req, res) => {
@@ -113,8 +130,10 @@ app.get('/clubs', async (req, res) => {
     try {
         const clubs = await Club.find({}).exec();
         const nontech=await NonTechnicalClub.find({}).exec();
+        const chap = await Chapters.find({}).exec();
 
-        res.render('clubs', { clubs,nontech }   );
+
+        res.render('clubs', { clubs,nontech,chap }   );
     } catch (error) {
         console.error(error);
         res.send('Error fetching data');
@@ -129,11 +148,35 @@ app.get('/clubs', async (req, res) => {
       res.send('Error fetching non-technical clubs');
     }
   });
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
-
-
-
+  app.get('/clubs', async (req, res) => {
+    try {
+      const chap = await Chapters.find({}).exec();
+      res.render('clubs', { clubs: chap });
+    } catch (error) {
+      console.error(error);
+      res.send('Error fetching non-technical clubs');
+    }
+  });
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/index.html'));
+  });
   
+  app.get('/images', (req, res) => {
+    // Scan the "public/images/gallery" directory for image files
+    const imageDirectory = path.join(__dirname, 'public/images/gallery');
+    fs.readdir(imageDirectory, (err, files) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+      } else {
+        // Filter for image files (e.g., only display .jpg, .jpeg, .png, .gif, etc.)
+        const imageFiles = files.filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
+        res.json(imageFiles);
+      }
+    });
+  });
+  
+  
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}/login`);
+});
